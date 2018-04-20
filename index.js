@@ -21,13 +21,13 @@ app.get('/', (res, req) => {
 })
 
 
-app.get('/weather/:city', (req, res) => {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${req.params.city}&appid=${apiKey}&units=imperial`
-    const options = { method: 'get', url: apiUrl }
-    httpClient(options).then((apiResponse) => {
-        res.json(apiResponse.data)
-    })
-})
+// app.get('/weather/:city', (req, res) => {
+//     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${req.params.city}&appid=${apiKey}&units=imperial`
+//     const options = { method: 'get', url: apiUrl }
+//     httpClient(options).then((apiResponse) => {
+//         res.json(apiResponse.data)
+//     })
+// })
 
 app.listen(PORT, (err) => {
     console.log(err || `server running on port ${PORT}`)
