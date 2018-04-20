@@ -63,3 +63,15 @@ body {
     font-size: 20px;
     margin: 5px;
 }
+
+.sativa {
+    color: red;
+}
+
+.indica {
+    color: blue;
+}
+
+.hybrid {
+    color: purple;
+}
