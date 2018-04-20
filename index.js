@@ -23,6 +23,7 @@ app.get('/feels/:feel', (req, res) => {
     const apiUrl = `http://strainapi.evanbusse.com/${apiKey}/strains/search/effect/${req.params.feel}`
     const options = { method: 'get', url: apiUrl }
     httpClient(options).then((apiResponse) => {
+        console.log(apiResponse.data)
         res.json(apiResponse.data)
     })
 })

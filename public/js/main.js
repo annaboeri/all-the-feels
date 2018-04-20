@@ -12,7 +12,15 @@ $feelsItem.on('click', function() {
     httpClient(options).then((serverResponse) => {
         var results = serverResponse.data
         $.each( results, function( i, r ){
-             $resultsUl.append(`<li>${r.name}</li>`)
+            if (r.race === "sativa"){
+                $resultsUl.append(`<li class="sativa">${r.name} (${r.race})</li>`)
+            }
+            else if (r.race === "indica"){
+                $resultsUl.append(`<li class="indica">${r.name} (${r.race})</li>`)
+            } else {
+                $resultsUl.append(`<li class="hybrid">${r.name} (${r.race})</li>`)
+            }
+            
           })
     })
 })

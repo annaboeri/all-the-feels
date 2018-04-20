@@ -1,8 +1,19 @@
+body {
+    margin: 0 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 500px 500px;
+}
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
+    width: 160px;
     border: none;
     cursor: pointer;
 }
@@ -10,6 +21,9 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    height: 350px;
+    width: 160px;
+    overflow: scroll;
 }
 
 .dropdown-content {
@@ -36,4 +50,16 @@
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+#results-ul {
+    height: 500px;
+    width: 350px;
+    overflow: scroll;
+    list-style: none;
+}
+
+#results-ul li {
+    font-size: 20px;
+    margin: 5px;
 }
