@@ -7,9 +7,11 @@ var httpClient = axios.create()
 
 $feelsItem.on('click', function() {
     $resultsUl.empty()
+    $resultsUl.removeClass("display-list")
     const feel = $(this).text()
     const options = { url: `/feels/${feel}` }
     httpClient(options).then((serverResponse) => {
+        $resultsUl.addClass("display-list")
         var results = serverResponse.data
         $.each( results, function( i, r ){
             if (r.race === "sativa"){
