@@ -4,12 +4,17 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 200px 200px 500px;
+    grid-template-columns: 200px 200px 400px 300px;
 }
 
 .display-feel {
     padding: 16px;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+.results-key {
+    padding: 16px;
+    font-size: 20px;
 }
 
 
