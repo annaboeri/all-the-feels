@@ -7,6 +7,11 @@ h1 {
     font-family: 'Rock Salt', cursive;
 }
 
+.leaf-icon {
+    width: 75px;
+    vertical-align: bottom;
+}
+
 h2 span {
     font-family: 'Rock Salt', cursive;
 }

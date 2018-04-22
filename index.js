@@ -16,7 +16,7 @@ app.use(express.static(`${__dirname}/public`))
 
 
 app.get('/', (res, req) => {
-    res.sendFile(`${__dirname}/public/index.html`)
+    res.sendFile(`${__dirname}/index.html`)
 })
 
 app.get('/feels/:feel', (req, res) => {
