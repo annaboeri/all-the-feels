@@ -9,6 +9,7 @@ var httpClient = axios.create()
 
 $feelsItem.on('click', function() {
     $resultsUl.empty()
+    $resultsKey.empty()
     $resultsKey.removeClass("display-key")
     const feel = $(this).text()
     $displayFeel.text(feel)
