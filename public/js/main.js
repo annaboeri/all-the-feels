@@ -34,8 +34,8 @@ $feelsItem.on('click', function() {
     })
 })
 
-$resultsUl.on('click', function(){
-   // const feel = $(this).text()
+$resultsUl.on('click', $strainsLi, function(){
+   //const feel = $(this).text()
     console.log('clicked')
 })
 
