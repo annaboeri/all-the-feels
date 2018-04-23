@@ -7,6 +7,8 @@ var $strainsLi = $('.strains-li')
 var httpClient = axios.create()
 
 
+$( document ).tooltip()
+
 $feelsItem.on('click', function() {
     $resultsUl.empty()
     $resultsKey.empty()
@@ -29,17 +31,22 @@ $feelsItem.on('click', function() {
             } else {
                 $resultsUl.append(`<li class="strains-li hybrid">${r.name}</li>`)
             }
-            
           })
     })
 })
 
-$resultsUl.on('click', 'li', function(){
+$resultsUl.on('mouseenter', 'li', function(){
+    let $this = $(this)[0]
     const feel = $(this)[0].innerText
     const options = { url: `/details/${feel}` }
-    httpClient(options).then((serverResponse) => {
-       console.log(serverResponse.data)
-    })
+    console.log($($this).attr("title") !== undefined )
+    if (!$($this).attr("title")){
+        httpClient(options).then((serverResponse) => {
+             $($this).attr("title", serverResponse.data)
+             console.log($($this).attr("title") )
+           })
+    }
+
 })
 
 
