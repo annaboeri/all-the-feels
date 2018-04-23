@@ -19,7 +19,7 @@ h2 span {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 180px 200px 400px 300px;
+    grid-template-columns: 180px 200px 400px 500px;
 }
 
 .display-feel {
@@ -32,6 +32,7 @@ h2 span {
 
 .display-key {
     height: 90px;
+    width: 150px;
     padding: 16px;
     padding-left: 30px;
     margin: 20px 30px;
@@ -41,7 +42,8 @@ h2 span {
 }
 
 .display-info {
-    min-height: 150px;
+    max-height: 316px;
+    overflow: scroll;
     padding: 16px;
     padding-left: 30px;
     margin: 30px 30px;
@@ -106,6 +108,7 @@ h2 span {
 #results-ul {
     height: 500px;
     width: 350px;
+    margin-right: 20px;
     overflow: scroll;
     list-style: none;
 }
@@ -125,10 +128,23 @@ h2 span {
     color: #c395e3;
 }
 
+ul .sativa:hover {
+    font-weight: 800;
+}
+
 .indica {
     color: #8499d2;
 }
 
+ul .indica:hover {
+    font-weight: 800;
+}
+
+
 .hybrid {
     color: #32286f;
+}
+
+ul .hybrid:hover {
+    font-weight: 800;
 }
