@@ -7,7 +7,20 @@ var $strainsLi = $('.strains-li')
 var httpClient = axios.create()
 
 
-$( document ).tooltip()
+$( $resultsUl ).tooltip({   
+    position: {
+    my: "center bottom-20",
+    at: "center top",
+    using: function( position, feedback ) {
+      $( this ).css( position );
+      $( "<div>" )
+        .addClass( "arrow" )
+        .addClass( feedback.vertical )
+        .addClass( feedback.horizontal )
+        .appendTo( this );
+    }
+  }
+})
 
 $feelsItem.on('click', function() {
     $resultsUl.empty()
@@ -35,6 +48,7 @@ $feelsItem.on('click', function() {
     })
 })
 
+// add desc from api to li title attr (only if the li hasn't already been moused over)
 $resultsUl.on('mouseenter', 'li', function(){
     let $this = $(this)[0]
     const feel = $(this)[0].innerText
@@ -46,7 +60,6 @@ $resultsUl.on('mouseenter', 'li', function(){
              console.log($($this).attr("title") )
            })
     }
-
 })
 
 
