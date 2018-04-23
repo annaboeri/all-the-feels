@@ -1,5 +1,6 @@
 var $feelsBtn = $('#feels-btn')
 var $resultsKey = $('.results-key')
+var $resultsInfo = $('.results-info')
 var $feelsItem = $('.feels-item')
 var $resultsUl = $('#results-ul')
 var $displayFeel = $('.display-feel')
@@ -11,6 +12,7 @@ $feelsItem.on('click', function() {
     $resultsUl.empty()
     $resultsKey.empty()
     $resultsKey.removeClass("display-key")
+    $resultsInfo.removeClass("display-info")
     const feel = $(this).text()
     $displayFeel.text(feel)
     const options = { url: `/feels/${feel}` }
@@ -38,9 +40,10 @@ $resultsUl.on('click', 'li', function(){
     let $this = $(this)[0]
     const feel = $(this)[0].innerText
     const options = { url: `/details/${feel}` }
-    console.log($($this).attr("title") !== undefined )
     if (!$($this).attr("title")){
         httpClient(options).then((serverResponse) => {
+            $resultsInfo.addClass("display-info")
+            $resultsInfo.text(serverResponse.data)
              $($this).attr("title", serverResponse.data)
              console.log($($this).attr("title") )
            })
