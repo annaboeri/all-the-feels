@@ -36,7 +36,10 @@ $feelsItem.on('click', function() {
 
 $resultsUl.on('click', 'li', function(){
     const feel = $(this)[0].innerText
-    console.log(feel)
+    const options = { url: `/details/${feel}` }
+    httpClient(options).then((serverResponse) => {
+       console.log(serverResponse.data)
+    })
 })
 
 

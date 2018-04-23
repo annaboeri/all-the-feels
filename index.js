@@ -28,11 +28,16 @@ app.get('/feels/:feel', (req, res) => {
 })
 
 app.get('/details/:feel', (req, res) => {
-    const apiUrl = `http://strainapi.evanbusse.com/${apiKey}/strains/search/${req.params.feel}`
-    const options = { method: 'get', url: apiUrl }
-    httpClient(options).then((apiResponse) => {
-        res.json(apiResponse.data)
+    const descUrl = `http://strainapi.evanbusse.com/${apiKey}/strains/search/name/${req.params.feel}`
+    const descOptions = { method: 'get', url: descUrl }
+    httpClient(descOptions).then((apiResponse) => {
+        res.json(apiResponse.data[0].desc)
     })
+    // const flavorsUrl = `http://strainapi.evanbusse.com/${apiKey}/strains/data/flavors/3`
+    // const flavorsOptions = { method: 'get', url: flavorsUrl }
+    // httpClient(flavorsOptions).then((apiResponse) => {
+    //     console.log(apiResponse.data)
+    // })
 })
 
 
