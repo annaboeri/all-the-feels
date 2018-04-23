@@ -27,6 +27,15 @@ app.get('/feels/:feel', (req, res) => {
     })
 })
 
+app.get('/details/:feel', (req, res) => {
+    const apiUrl = `http://strainapi.evanbusse.com/${apiKey}/strains/search/${req.params.feel}`
+    const options = { method: 'get', url: apiUrl }
+    httpClient(options).then((apiResponse) => {
+        res.json(apiResponse.data)
+    })
+})
+
+
 app.listen(PORT, (err) => {
     console.log(err || `server running on port ${PORT}`)
 })
