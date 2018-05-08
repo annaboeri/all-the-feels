@@ -42,6 +42,7 @@ $resultsUl.on('click', 'li', function(){
     const feel = $(this)[0].innerText
     const options = { url: `/details/${feel}` }
         httpClient(options).then((serverResponse) => {
+            console.log($this)
             $resultsInfo.addClass("display-info")
             if (!serverResponse.data){
                 $resultsInfo.text("Sorry, no description is available for this strain.")

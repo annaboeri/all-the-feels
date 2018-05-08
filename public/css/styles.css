@@ -132,6 +132,10 @@ ul .sativa:hover {
     font-weight: 800;
 }
 
+.sativa-border {
+    border: 2px solid #c395e3;
+}
+
 .indica {
     color: #8499d2;
 }
@@ -140,6 +144,9 @@ ul .indica:hover {
     font-weight: 800;
 }
 
+.indica-border {
+    border: 2px solid #8499d2;
+}
 
 .hybrid {
     color: #32286f;
@@ -147,4 +154,8 @@ ul .indica:hover {
 
 ul .hybrid:hover {
     font-weight: 800;
+}
+
+.hybrid-border {
+    border: 2px solid #32286f;
 }
