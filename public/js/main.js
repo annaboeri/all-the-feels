@@ -23,16 +23,18 @@ $feelsItem.on('click', function() {
         $resultsKey.html("Sativa:  <span class='sativa'>&#9673</span><br />Indica: <span class='indica'>&#9673</span><br />Hybrid:  <span class='hybrid'>&#9673</span>")
         $resultsUl.append(`<li class="ul-header">Try one of these strains:</li>`)
         var results = serverResponse.data
+        var resultsList = []
         $.each( results, function( i, r ){
             if (r.race === "sativa"){
-                $resultsUl.append(`<li class="strains-li sativa">${r.name}</li>`)
+                resultsList.push(`<li class="strains-li sativa">${r.name}</li>`)
             }
             else if (r.race === "indica"){
-                $resultsUl.append(`<li class="strains-li indica">${r.name}</li>`)
+                resultsList.push(`<li class="strains-li indica">${r.name}</li>`)
             } else {
-                $resultsUl.append(`<li class="strains-li hybrid">${r.name}</li>`)
+                resultsList.push(`<li class="strains-li hybrid">${r.name}</li>`)
             }
           })
+          $(resultsList.join("")).appendTo($resultsUl)
     })
 })
 
